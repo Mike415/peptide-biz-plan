@@ -6,6 +6,8 @@ import TelehealthPlan from "@/components/sections/TelehealthPlan";
 import BayAreaPlan from "@/components/sections/BayAreaPlan";
 import ForTheDoctor from "@/components/sections/ForTheDoctor";
 import PeptideMenu from "@/components/sections/PeptideMenu";
+import RevenueBreakdown from "@/components/sections/RevenueBreakdown";
+import PeptideEncyclopedia from "@/components/sections/PeptideEncyclopedia";
 import Financials from "@/components/sections/Financials";
 import NextSteps from "@/components/sections/NextSteps";
 
@@ -20,6 +22,8 @@ export default function Home() {
       <BayAreaPlan />
       <ForTheDoctor />
       <PeptideMenu />
+      <RevenueBreakdown />
+      <PeptideEncyclopedia />
       <Financials />
       <NextSteps />
     </div>
