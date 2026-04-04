@@ -8,6 +8,7 @@ const navItems = [
   { id: "peptides", label: "Peptide Menu" },
   { id: "revenue", label: "Revenue" },
   { id: "encyclopedia", label: "Encyclopedia" },
+  { id: "pharmacy", label: "Pharmacies" },
   { id: "financials", label: "Financials" },
   { id: "nextsteps", label: "Next Steps" },
 ];

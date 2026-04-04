@@ -7,6 +7,7 @@ import BayAreaPlan from "@/components/sections/BayAreaPlan";
 import ForTheDoctor from "@/components/sections/ForTheDoctor";
 import PeptideMenu from "@/components/sections/PeptideMenu";
 import RevenueBreakdown from "@/components/sections/RevenueBreakdown";
+import PharmacyDirectory from "@/components/sections/PharmacyDirectory";
 import PeptideEncyclopedia from "@/components/sections/PeptideEncyclopedia";
 import Financials from "@/components/sections/Financials";
 import NextSteps from "@/components/sections/NextSteps";
@@ -24,6 +25,7 @@ export default function Home() {
       <PeptideMenu />
       <RevenueBreakdown />
       <PeptideEncyclopedia />
+      <PharmacyDirectory />
       <Financials />
       <NextSteps />
     </div>
