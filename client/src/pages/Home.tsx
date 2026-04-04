@@ -9,6 +9,7 @@ import PeptideMenu from "@/components/sections/PeptideMenu";
 import RevenueBreakdown from "@/components/sections/RevenueBreakdown";
 import PharmacyDirectory from "@/components/sections/PharmacyDirectory";
 import PeptideEncyclopedia from "@/components/sections/PeptideEncyclopedia";
+import PatientJourney from "@/components/sections/PatientJourney";
 import Financials from "@/components/sections/Financials";
 import NextSteps from "@/components/sections/NextSteps";
 
@@ -26,6 +27,7 @@ export default function Home() {
       <RevenueBreakdown />
       <PeptideEncyclopedia />
       <PharmacyDirectory />
+      <PatientJourney />
       <Financials />
       <NextSteps />
     </div>
