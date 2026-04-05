@@ -164,28 +164,6 @@ const brandConcepts = [
     bestFor: "Both Models",
     risk: "Low — clean, professional, no negative associations. Check trademark.",
   },
-  {
-    id: "morelli",
-    name: "Morelli Longevity",
-    tagline: "Family Medicine. Future Science.",
-    angle: "Physician-Named / Trust",
-    rating: 4,
-    description: "Using the family name creates an immediate trust signal — a real doctor is putting their name on this. It's the oldest and most powerful branding strategy in medicine (Mayo Clinic, Cleveland Clinic, Sloane Kettering). It also creates a natural story: a father-son team bringing cutting-edge medicine to their community.",
-    why: "In the Bay Area, where patients are paying $500–$2,000/month out of pocket, they want to know there's a real physician behind the brand. A named practice signals accountability, permanence, and personal commitment in a way that coined names cannot.",
-    domains: [
-      { name: "morellilongevity.com", status: "check-whois" },
-      { name: "morellimd.com", status: "check-whois" },
-      { name: "morelliclinic.com", status: "check-whois" },
-      { name: "morelli.health", status: "likely-available" },
-    ],
-    colors: ["#1C3A5E", "#2E6DA4", "#F5F5F0", "#C9A84C"],
-    colorNames: ["Deep Navy", "Physician Blue", "Warm White", "Heritage Gold"],
-    fonts: ["Cormorant Garamond (display)", "Inter (body)"],
-    logoIdea: "An elegant serif wordmark with a subtle caduceus or molecular motif. Timeless, like a law firm or private bank.",
-    competitors: "No direct competitor uses a physician's family name in the Bay Area peptide/longevity space.",
-    bestFor: "Bay Area Clinic",
-    risk: "Low — the name is your dad's, so trademark is clean. DNS shows taken but likely a different Morelli.",
-  },
 ];
 
 const namingPrinciples = [
@@ -240,7 +218,7 @@ const StatusBadge = ({ status }: { status: string }) => {
 };
 
 export default function Branding() {
-  const [expanded, setExpanded] = useState<string | null>("helix");
+  const [expanded, setExpanded] = useState<string | null>("nextide");
   const [filter, setFilter] = useState<string>("All");
 
   const filters = ["All", "Bay Area Clinic", "Telehealth Model", "Both Models"];
@@ -260,7 +238,7 @@ export default function Branding() {
             Naming & Brand Identity
           </h2>
           <p className="text-slate-300 text-lg max-w-3xl">
-            In a crowded market, your brand name is your first clinical impression. Below are six strategic concepts across different positioning angles, with visual identity direction, domain guidance, and competitive rationale.
+            In a crowded market, your brand name is your first clinical impression. Below are seven strategic concepts across different positioning angles, with visual identity direction, domain guidance, and competitive rationale.
           </p>
         </div>
 
@@ -428,7 +406,7 @@ export default function Branding() {
         {/* Naming Principles */}
         <div className="mb-14">
           <h3 className="text-xl font-semibold text-white mb-6" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-            Six Rules for Naming a Physician-Led Health Brand
+            Rules for Naming a Physician-Led Health Brand
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {namingPrinciples.map((p, i) => (
