@@ -4,6 +4,7 @@ import Hero from "@/components/sections/Hero";
 import Market from "@/components/sections/Market";
 import FDAReclassification from "@/components/sections/FDAReclassification";
 import CompetitiveAnalysis from "@/components/sections/CompetitiveAnalysis";
+import Branding from "@/components/sections/Branding";
 import TelehealthPlan from "@/components/sections/TelehealthPlan";
 import BayAreaPlan from "@/components/sections/BayAreaPlan";
 import ForTheDoctor from "@/components/sections/ForTheDoctor";
@@ -24,6 +25,7 @@ export default function Home() {
       <Market />
       <FDAReclassification />
       <CompetitiveAnalysis />
+      <Branding />
       <TelehealthPlan />
       <BayAreaPlan />
       <ForTheDoctor />
