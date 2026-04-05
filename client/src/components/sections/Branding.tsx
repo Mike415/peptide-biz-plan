@@ -3,6 +3,33 @@ import { ChevronDown, ChevronUp, ExternalLink, Check, X, Star, Palette, Type, Gl
 
 const brandConcepts = [
   {
+    id: "nextara",
+    name: "Nextara Health",
+    tagline: "Next-Generation Medicine. Physician-Led.",
+    angle: "⭐ Top Pick — Coined & Ownable",
+    rating: 5,
+    description: "Nextara is a coined word blending 'Next' (forward-looking, next-generation) with 'Ara' (Latin for altar; also a southern constellation) — creating a name that sounds pharmaceutical-grade and premium without being clinical or cold. It has no prior use in healthcare, making it highly trademarkable.",
+    why: "This is the strongest long-term brand play. It's a genuinely unique coined word — all 9 domain variants across .com, .co, and .care appear to be unregistered, which is extremely rare. It works equally well for the telehealth model and the Bay Area clinic, and it scales nationally without geographic limitations. The name signals innovation without alienating patients who may not be tech-savvy.",
+    domains: [
+      { name: "nextarahealth.com", status: "likely-available" },
+      { name: "nextarahealth.co", status: "likely-available" },
+      { name: "nextarahealth.care", status: "likely-available" },
+      { name: "nextaramd.com", status: "likely-available" },
+      { name: "nextaramd.co", status: "likely-available" },
+      { name: "nextaramd.care", status: "likely-available" },
+      { name: "nextara.com", status: "likely-available" },
+      { name: "nextara.co", status: "likely-available" },
+      { name: "nextara.care", status: "likely-available" },
+    ],
+    colors: ["#0B2545", "#136F63", "#F0F7F4", "#E0A96D"],
+    colorNames: ["Deep Navy", "Teal", "Soft White", "Gold Accent"],
+    fonts: ["Space Grotesk (display)", "Inter (body)"],
+    logoIdea: "A clean wordmark where the 'N' subtly incorporates an upward arrow or molecular bond — forward momentum meets biological precision. Deep navy on white, or teal on dark.",
+    competitors: "No competitor uses this name. Uniquely ownable across all channels — domain, trademark, social handles. Sounds like a Series B biotech startup, not a wellness spa.",
+    bestFor: "Both Models",
+    risk: "Very Low — coined word with no prior healthcare use. All major domain variants appear available. Conduct USPTO Class 44 trademark search before launch.",
+  },
+  {
     id: "helix",
     name: "Helix Health",
     tagline: "Precision Medicine. Physician-Led.",
@@ -392,22 +419,38 @@ export default function Branding() {
 
         {/* Bottom CTA */}
         <div className="mt-12 bg-gradient-to-r from-[#136F63]/20 to-[#E0A96D]/10 border border-[#136F63]/30 rounded-2xl p-8">
-          <h3 className="text-xl font-bold text-white mb-3" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-            Our Recommendation
-          </h3>
-          <p className="text-slate-300 text-sm leading-relaxed mb-4">
-            For the Bay Area clinic, <strong className="text-white">Morelli Longevity</strong> or <strong className="text-white">Helix Health</strong> are the strongest choices — one leverages the physician's family name for maximum trust, the other builds a scalable brand that can outlast any individual. For the telehealth model, <strong className="text-white">Cadence MD</strong> or <strong className="text-white">Signal Health</strong> are the most compelling — performance-oriented, tech-adjacent, and physician-credentialed.
+          <div className="flex items-center gap-3 mb-3">
+            <Star className="w-5 h-5 text-[#E0A96D] fill-[#E0A96D]" />
+            <h3 className="text-xl font-bold text-white" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+              Our Recommendation
+            </h3>
+          </div>
+          <p className="text-slate-300 text-sm leading-relaxed mb-6">
+            <strong className="text-white">Nextara Health</strong> is the clear top pick for both models. It's a genuinely coined word with no prior healthcare use, all 9 domain variants across .com, .co, and .care appear available, and it scales nationally without geographic or personal name limitations. For the Bay Area clinic specifically, <strong className="text-white">Helix Health</strong> is the strongest alternative. For telehealth, <strong className="text-white">Cadence MD</strong> or <strong className="text-white">Signal Health</strong> are strong runners-up.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="bg-[#112240] rounded-xl p-4">
-              <div className="text-[#E0A96D] text-xs font-semibold uppercase tracking-wider mb-2">Bay Area Clinic — Top Pick</div>
-              <div className="text-white font-bold text-lg">Morelli Longevity</div>
-              <div className="text-slate-400 text-sm">Family name = maximum trust. No other Bay Area longevity clinic uses a physician's name. Instantly differentiates.</div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="bg-[#0B2545] border border-[#E0A96D]/40 rounded-xl p-4 relative">
+              <div className="absolute -top-2.5 left-4">
+                <span className="bg-[#E0A96D] text-[#0B2545] text-xs font-bold px-2.5 py-0.5 rounded-full">⭐ #1 Overall</span>
+              </div>
+              <div className="text-[#E0A96D] text-xs font-semibold uppercase tracking-wider mb-2 mt-2">Both Models — Top Pick</div>
+              <div className="text-white font-bold text-lg">Nextara Health</div>
+              <div className="text-slate-400 text-sm mt-1">Coined, ownable, trademarkable. All domain variants available. Sounds like a premium biotech brand. Works for telehealth and clinic alike.</div>
+              <div className="mt-3 flex flex-wrap gap-1">
+                <span className="text-xs bg-[#136F63]/20 text-[#136F63] border border-[#136F63]/30 rounded px-2 py-0.5">nextarahealth.com ✅</span>
+                <span className="text-xs bg-[#136F63]/20 text-[#136F63] border border-[#136F63]/30 rounded px-2 py-0.5">nextara.co ✅</span>
+                <span className="text-xs bg-[#136F63]/20 text-[#136F63] border border-[#136F63]/30 rounded px-2 py-0.5">nextarahealth.care ✅</span>
+              </div>
             </div>
             <div className="bg-[#112240] rounded-xl p-4">
-              <div className="text-[#E0A96D] text-xs font-semibold uppercase tracking-wider mb-2">Telehealth — Top Pick</div>
+              <div className="text-[#E0A96D] text-xs font-semibold uppercase tracking-wider mb-2">Bay Area Clinic — Runner Up</div>
+              <div className="text-white font-bold text-lg">Helix Health</div>
+              <div className="text-slate-400 text-sm mt-1">Strongest scientific credibility. DNA helix = biological depth. Ideal for a premium in-person clinic targeting educated Bay Area patients.</div>
+            </div>
+            <div className="bg-[#112240] rounded-xl p-4">
+              <div className="text-[#E0A96D] text-xs font-semibold uppercase tracking-wider mb-2">Telehealth — Runner Up</div>
               <div className="text-white font-bold text-lg">Cadence MD</div>
-              <div className="text-slate-400 text-sm">Performance + physician authority. Resonates with the Bay Area tech professional. Scalable nationally.</div>
+              <div className="text-slate-400 text-sm mt-1">Performance + physician authority. Resonates with Bay Area tech professionals. Scalable nationally as a telehealth brand.</div>
             </div>
           </div>
         </div>
