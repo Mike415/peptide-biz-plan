@@ -239,6 +239,167 @@ export default function Branding() {
           </p>
         </div>
 
+        {/* Nextara Health Hero Spotlight */}
+        <div className="mb-14 relative overflow-hidden rounded-3xl border border-[#136F63]/40" style={{ background: 'linear-gradient(135deg, #0B2545 0%, #0d3060 40%, #0f3d4a 100%)' }}>
+          {/* Background grid pattern */}
+          <div className="absolute inset-0 opacity-5" style={{ backgroundImage: 'radial-gradient(circle, #136F63 1px, transparent 1px)', backgroundSize: '28px 28px' }} />
+          {/* Gold accent bar */}
+          <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#E0A96D] via-[#136F63] to-[#E0A96D]" />
+
+          <div className="relative p-8 lg:p-12">
+            {/* Badge */}
+            <div className="flex flex-wrap items-center gap-3 mb-6">
+              <span className="inline-flex items-center gap-2 bg-[#E0A96D] text-[#0B2545] text-xs font-bold px-3 py-1.5 rounded-full">
+                <Star className="w-3.5 h-3.5 fill-[#0B2545]" /> #1 BRAND RECOMMENDATION
+              </span>
+              <span className="inline-flex items-center gap-2 bg-[#136F63]/20 border border-[#136F63]/40 text-[#136F63] text-xs font-semibold px-3 py-1.5 rounded-full">
+                <Globe className="w-3.5 h-3.5" /> All 9 Domains Available
+              </span>
+              <span className="inline-flex items-center gap-2 bg-[#0B2545]/60 border border-slate-600/40 text-slate-300 text-xs font-semibold px-3 py-1.5 rounded-full">
+                <Shield className="w-3.5 h-3.5" /> Trademarkable Coined Word
+              </span>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+              {/* Left: Brand Identity */}
+              <div>
+                {/* Logo Concept */}
+                <div className="mb-6">
+                  <div className="inline-flex items-center gap-4 mb-4">
+                    <div className="w-16 h-16 rounded-2xl flex items-center justify-center text-3xl font-black text-white border-2 border-[#136F63]" style={{ background: 'linear-gradient(135deg, #136F63, #0B2545)', fontFamily: "'Space Grotesk', sans-serif" }}>
+                      N
+                    </div>
+                    <div>
+                      <h3 className="text-4xl font-black text-white tracking-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                        Nextara
+                      </h3>
+                      <p className="text-[#136F63] font-semibold text-sm tracking-widest uppercase">Health</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Tagline Options */}
+                <div className="mb-6">
+                  <h4 className="text-[#E0A96D] text-xs font-semibold uppercase tracking-widest mb-3">Tagline Options</h4>
+                  <div className="space-y-2">
+                    {[
+                      { line: "Next-Generation Medicine. Physician-Led.", note: "Primary — clinical authority" },
+                      { line: "The Future of Your Biology.", note: "Aspirational — longevity market" },
+                      { line: "Precision Peptides. Real Results.", note: "Direct — performance market" },
+                      { line: "Where Science Meets Longevity.", note: "Category — Bay Area clinic" },
+                      { line: "Your Protocol. Your Physician.", note: "Personal — telehealth model" },
+                    ].map((t, i) => (
+                      <div key={i} className="flex items-start gap-3 bg-[#0B2545]/60 rounded-lg px-4 py-2.5">
+                        <div className={`w-1.5 h-1.5 rounded-full mt-1.5 flex-shrink-0 ${i === 0 ? 'bg-[#E0A96D]' : 'bg-slate-600'}`} />
+                        <div>
+                          <p className={`text-sm font-medium ${i === 0 ? 'text-white' : 'text-slate-300'}`}>"{t.line}"</p>
+                          <p className="text-slate-500 text-xs mt-0.5">{t.note}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Color Palette */}
+                <div>
+                  <h4 className="text-[#E0A96D] text-xs font-semibold uppercase tracking-widest mb-3">Brand Color Palette</h4>
+                  <div className="flex gap-3">
+                    {[
+                      { hex: "#0B2545", name: "Deep Navy", role: "Primary BG" },
+                      { hex: "#136F63", name: "Teal", role: "Accent" },
+                      { hex: "#E0A96D", name: "Gold", role: "Highlight" },
+                      { hex: "#F0F7F4", name: "Soft White", role: "Text / BG" },
+                    ].map((c, i) => (
+                      <div key={i} className="flex-1">
+                        <div className="w-full h-10 rounded-lg border border-slate-700/50 mb-2" style={{ backgroundColor: c.hex }} />
+                        <p className="text-white text-xs font-semibold">{c.name}</p>
+                        <p className="text-slate-500 text-xs font-mono">{c.hex}</p>
+                        <p className="text-slate-500 text-xs">{c.role}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Right: Name Analysis + Domains */}
+              <div className="space-y-6">
+                {/* Name Breakdown */}
+                <div>
+                  <h4 className="text-[#E0A96D] text-xs font-semibold uppercase tracking-widest mb-4">Name Anatomy</h4>
+                  <div className="grid grid-cols-2 gap-3 mb-4">
+                    <div className="bg-[#0B2545]/70 border border-[#136F63]/30 rounded-xl p-4">
+                      <div className="text-3xl font-black text-[#136F63] mb-1" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>NEXT</div>
+                      <p className="text-white text-sm font-semibold">Forward-Looking</p>
+                      <p className="text-slate-400 text-xs mt-1">Next-generation medicine. The next chapter of your health. What comes after conventional care.</p>
+                    </div>
+                    <div className="bg-[#0B2545]/70 border border-[#E0A96D]/30 rounded-xl p-4">
+                      <div className="text-3xl font-black text-[#E0A96D] mb-1" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>ARA</div>
+                      <p className="text-white text-sm font-semibold">Latin / Celestial</p>
+                      <p className="text-slate-400 text-xs mt-1">Latin for "altar" — a place of transformation. Also a southern constellation — precision, navigation, science.</p>
+                    </div>
+                  </div>
+                  <div className="bg-[#0B2545]/70 border border-slate-700/40 rounded-xl p-4">
+                    <p className="text-slate-300 text-sm leading-relaxed">
+                      Together, <strong className="text-white">Nextara</strong> sounds pharmaceutical-grade and premium — like a drug name that went through FDA review — without being clinical or cold. It's memorable, two syllables when spoken naturally ("nex-TARA"), and has zero prior use in healthcare.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Domain Table */}
+                <div>
+                  <h4 className="text-[#E0A96D] text-xs font-semibold uppercase tracking-widest mb-3">Domain Availability</h4>
+                  <div className="space-y-1.5">
+                    {[
+                      { domain: "nextarahealth.com", priority: "Primary", status: "✅ Likely Available" },
+                      { domain: "nextara.co", priority: "Short / Modern", status: "✅ Likely Available" },
+                      { domain: "nextarahealth.care", priority: "Healthcare TLD", status: "✅ Likely Available" },
+                      { domain: "nextaramd.com", priority: "Defensive", status: "✅ Likely Available" },
+                      { domain: "nextaramd.co", priority: "Defensive", status: "✅ Likely Available" },
+                      { domain: "nextaramd.care", priority: "Defensive", status: "✅ Likely Available" },
+                      { domain: "nextara.com", priority: "Premium Short", status: "✅ Likely Available" },
+                      { domain: "nextara.co", priority: "Modern Short", status: "✅ Likely Available" },
+                      { domain: "nextara.care", priority: "Healthcare Short", status: "✅ Likely Available" },
+                    ].map((d, i) => (
+                      <div key={i} className="flex items-center justify-between gap-2 bg-[#0B2545]/60 rounded-lg px-3 py-2">
+                        <div className="flex items-center gap-3">
+                          <span className="text-slate-300 text-xs font-mono">{d.domain}</span>
+                          <span className="text-slate-600 text-xs hidden sm:inline">{d.priority}</span>
+                        </div>
+                        <span className="text-green-400 text-xs font-medium whitespace-nowrap">{d.status}</span>
+                      </div>
+                    ))}
+                  </div>
+                  <p className="text-slate-500 text-xs mt-2">DNS-verified. Confirm on <a href="https://www.namecheap.com/domains/registration/results/?domain=nextarahealth" target="_blank" rel="noopener noreferrer" className="text-[#136F63] underline">Namecheap</a> before purchasing.</p>
+                </div>
+
+                {/* Action Items */}
+                <div className="bg-[#136F63]/10 border border-[#136F63]/30 rounded-xl p-4">
+                  <h4 className="text-[#136F63] text-xs font-semibold uppercase tracking-widest mb-3">Immediate Action Items</h4>
+                  <div className="space-y-2">
+                    {[
+                      { step: "1", action: "Register nextarahealth.com + nextara.co", cost: "~$25/yr", urgency: "This Week" },
+                      { step: "2", action: "Search USPTO TESS — Class 44 (Medical Services)", cost: "Free", urgency: "This Week" },
+                      { step: "3", action: "Reserve @nextarahealth on Instagram, X, LinkedIn", cost: "Free", urgency: "Today" },
+                      { step: "4", action: "File intent-to-use trademark application", cost: "~$350", urgency: "Before Launch" },
+                    ].map((a, i) => (
+                      <div key={i} className="flex items-start gap-3">
+                        <div className="w-5 h-5 rounded-full bg-[#136F63]/30 border border-[#136F63]/50 flex items-center justify-center text-[#136F63] text-xs font-bold flex-shrink-0 mt-0.5">{a.step}</div>
+                        <div className="flex-1 min-w-0">
+                          <p className="text-slate-200 text-sm">{a.action}</p>
+                          <div className="flex items-center gap-3 mt-0.5">
+                            <span className="text-slate-500 text-xs">{a.cost}</span>
+                            <span className={`text-xs font-medium ${a.urgency === 'Today' ? 'text-red-400' : a.urgency === 'This Week' ? 'text-[#E0A96D]' : 'text-slate-400'}`}>{a.urgency}</span>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Naming Principles */}
         <div className="mb-14">
           <h3 className="text-xl font-semibold text-white mb-6" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
