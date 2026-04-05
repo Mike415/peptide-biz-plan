@@ -2,6 +2,7 @@ import Nav from "@/components/Nav";
 import PasswordGate from "@/components/PasswordGate";
 import Hero from "@/components/sections/Hero";
 import Market from "@/components/sections/Market";
+import FDAReclassification from "@/components/sections/FDAReclassification";
 import TelehealthPlan from "@/components/sections/TelehealthPlan";
 import BayAreaPlan from "@/components/sections/BayAreaPlan";
 import ForTheDoctor from "@/components/sections/ForTheDoctor";
@@ -20,6 +21,7 @@ export default function Home() {
       <Nav />
       <Hero />
       <Market />
+      <FDAReclassification />
       <TelehealthPlan />
       <BayAreaPlan />
       <ForTheDoctor />
