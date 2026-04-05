@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 const navItems = [
   { id: "market", label: "Market" },
   { id: "reclassification", label: "2026 FDA" },
+  { id: "competitive", label: "Competition" },
   { id: "telehealth", label: "Telehealth Plan" },
   { id: "bayarea", label: "Bay Area Plan" },
   { id: "doctor", label: "For the Doctor" },
