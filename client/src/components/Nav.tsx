@@ -14,6 +14,7 @@ const navItems = [
   { id: "pharmacy", label: "Pharmacies" },
   { id: "journey", label: "Patient Journey" },
   { id: "financials", label: "Financials" },
+  { id: "studyguide", label: "Study Guide" },
   { id: "nextsteps", label: "Next Steps" },
 ];
 

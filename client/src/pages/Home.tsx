@@ -15,6 +15,7 @@ import PeptideEncyclopedia from "@/components/sections/PeptideEncyclopedia";
 import PatientJourney from "@/components/sections/PatientJourney";
 import Financials from "@/components/sections/Financials";
 import NextSteps from "@/components/sections/NextSteps";
+import StudyGuide from "@/components/sections/StudyGuide";
 
 export default function Home() {
   return (
@@ -35,6 +36,7 @@ export default function Home() {
       <PharmacyDirectory />
       <PatientJourney />
       <Financials />
+      <StudyGuide />
       <NextSteps />
     </div>
     </PasswordGate>
