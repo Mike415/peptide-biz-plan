@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 const navItems = [
   { id: "market", label: "Market" },
@@ -18,31 +18,80 @@ const navItems = [
   { id: "nextsteps", label: "Next Steps" },
 ];
 
+function getActiveSection(): string {
+  let current = navItems[0].id;
+  for (const item of navItems) {
+    const el = document.getElementById(item.id);
+    if (el && el.getBoundingClientRect().top <= 120) {
+      current = item.id;
+    }
+  }
+  return current;
+}
+
 export default function Nav() {
-  const [active, setActive] = useState("market");
+  const [active, setActive] = useState(() => {
+    // Initialize from URL hash if present
+    const hash = window.location.hash.replace("#", "");
+    return navItems.find((n) => n.id === hash)?.id ?? navItems[0].id;
+  });
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
+  // Scroll to section on mount if hash is present
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 60);
-      const sections = navItems.map((n) => document.getElementById(n.id));
-      let current = "market";
-      for (const section of sections) {
-        if (section && section.getBoundingClientRect().top <= 120) {
-          current = section.id;
-        }
+    const hash = window.location.hash.replace("#", "");
+    if (hash) {
+      const el = document.getElementById(hash);
+      if (el) {
+        // Small delay to let page render fully
+        setTimeout(() => {
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 150);
       }
-      setActive(current);
-    };
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+    }
   }, []);
 
-  const scrollTo = (id: string) => {
+  // Handle browser back/forward hash navigation
+  useEffect(() => {
+    const onHashChange = () => {
+      const hash = window.location.hash.replace("#", "");
+      if (hash) {
+        const el = document.getElementById(hash);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
+          setActive(hash);
+        }
+      }
+    };
+    window.addEventListener("hashchange", onHashChange);
+    return () => window.removeEventListener("hashchange", onHashChange);
+  }, []);
+
+  // Update hash and active state on scroll
+  const handleScroll = useCallback(() => {
+    setScrolled(window.scrollY > 60);
+    const current = getActiveSection();
+    if (current !== active) {
+      setActive(current);
+      // Update URL hash without pushing to history (replaceState keeps history clean)
+      history.replaceState(null, "", `#${current}`);
+    }
+  }, [active]);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [handleScroll]);
+
+  const scrollTo = (id: string, e: React.MouseEvent) => {
+    e.preventDefault();
     const el = document.getElementById(id);
     if (el) {
       el.scrollIntoView({ behavior: "smooth", block: "start" });
+      // Update hash immediately on click
+      history.pushState(null, "", `#${id}`);
+      setActive(id);
     }
     setMenuOpen(false);
   };
@@ -69,10 +118,11 @@ export default function Nav() {
         {/* Desktop nav */}
         <div className="hidden lg:flex items-center gap-1">
           {navItems.map((item) => (
-            <button
+            <a
               key={item.id}
-              onClick={() => scrollTo(item.id)}
-              className={`px-3 py-1.5 text-xs font-semibold tracking-wide uppercase transition-all duration-200 ${
+              href={`#${item.id}`}
+              onClick={(e) => scrollTo(item.id, e)}
+              className={`px-3 py-1.5 text-xs font-semibold tracking-wide uppercase transition-all duration-200 no-underline ${
                 active === item.id
                   ? "text-[oklch(0.76_0.12_65)] border-b-2 border-[oklch(0.76_0.12_65)]"
                   : "text-white/60 hover:text-white/90"
@@ -80,18 +130,19 @@ export default function Nav() {
               style={{ fontFamily: "'Space Grotesk', sans-serif" }}
             >
               {item.label}
-            </button>
+            </a>
           ))}
         </div>
 
         {/* CTA */}
-        <button
-          onClick={() => scrollTo("nextsteps")}
-          className="hidden lg:block bg-[oklch(0.52_0.12_175)] hover:bg-[oklch(0.62_0.10_175)] text-white text-xs font-bold px-4 py-2 transition-colors duration-200 tracking-wide uppercase"
+        <a
+          href="#nextsteps"
+          onClick={(e) => scrollTo("nextsteps", e)}
+          className="hidden lg:block bg-[oklch(0.52_0.12_175)] hover:bg-[oklch(0.62_0.10_175)] text-white text-xs font-bold px-4 py-2 transition-colors duration-200 tracking-wide uppercase no-underline"
           style={{ fontFamily: "'Space Grotesk', sans-serif" }}
         >
           Get Started →
-        </button>
+        </a>
 
         {/* Mobile hamburger */}
         <button
@@ -108,16 +159,17 @@ export default function Nav() {
       {menuOpen && (
         <div className="lg:hidden bg-[oklch(0.22_0.05_252)] border-t border-white/10 px-6 py-4 flex flex-col gap-2">
           {navItems.map((item) => (
-            <button
+            <a
               key={item.id}
-              onClick={() => scrollTo(item.id)}
-              className={`text-left py-2 text-sm font-semibold tracking-wide uppercase transition-colors ${
+              href={`#${item.id}`}
+              onClick={(e) => scrollTo(item.id, e)}
+              className={`text-left py-2 text-sm font-semibold tracking-wide uppercase transition-colors no-underline ${
                 active === item.id ? "text-[oklch(0.76_0.12_65)]" : "text-white/70 hover:text-white"
               }`}
               style={{ fontFamily: "'Space Grotesk', sans-serif" }}
             >
               {item.label}
-            </button>
+            </a>
           ))}
         </div>
       )}
